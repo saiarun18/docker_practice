@@ -15,7 +15,8 @@ pipeline {
 
     stage('image_build') {
       steps {
-        imagebuild()
+        sh 'docker build -t mycontainer .'
+        echo 'Docker image build completed'
       }
     }
 
