@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('MVN_Build') {
+      steps {
+        sh 'mvn clean install'
+      }
+    }
+
   }
 }
