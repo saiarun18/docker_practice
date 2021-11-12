@@ -23,8 +23,8 @@ pipeline {
     stage('Image_push') {
       steps {
         sh 'docker login -u arun1801docker -p Arun@9876'
-        sh 'docker tag arun1801docker/mycontainer'
-        sh 'docker push mycontainer:1 arun1801docker/mycontainer:1'
+        sh 'docker tag mycontainer arun1801docker/mycontainer'
+        sh 'docker push mycontainer arun1801docker/mycontainer'
         echo 'mycontainer image pushed to Dockerhub'
       }
     }
