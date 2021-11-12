@@ -13,5 +13,21 @@ pipeline {
       }
     }
 
+    stage('image_build') {
+      steps {
+        sh 'docker build -t mycontainer .'
+        echo 'Image build'
+      }
+    }
+
+    stage('Image_push') {
+      steps {
+        sh 'docker login -u arun1801docker -p Arun@9876'
+        sh 'docker tag arun1801docker/mycontainer'
+        sh 'docker push arun1801docker/mycontainer'
+        echo 'mycontainer image pushed to Dockerhub'
+      }
+    }
+
   }
 }
